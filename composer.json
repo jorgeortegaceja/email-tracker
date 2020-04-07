@@ -1,0 +1,21 @@
+{
+    "name": "smartsolutionscompany/emails-tracker",
+    "description": "Este paquete se encarga de dar seguimiento a correos electronicos.",
+    "authors": [
+        {
+            "name": "Jorge Alberto Ortega Ceja",
+            "email": "jorgeortegacceja@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "license": "MIT",
+    "type": "project",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "EmailsTraker": "src/"
+        }
+    }
+}
