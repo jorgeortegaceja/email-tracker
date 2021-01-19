@@ -9,7 +9,7 @@ class EmailServiceProvider extends ServiceProvider
 
     public function register()
     {
-        \App::bind('TrakerEmail', function(){
+        \App::bind('EmailTraker', function(){
             return new EmailTrackerHandler;
         });
     }
