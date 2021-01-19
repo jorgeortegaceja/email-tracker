@@ -1,6 +1,6 @@
 {
-    "name": "jorgeortegaceja/emails-tracker",
-    "description": "Este paquete se encarga de dar seguimiento a correos electronicos.",
+    "name": "jorgeortegaceja/tracker-email",
+    "description": "Esté paquete se encarga de administrar tus listas de correos electronicos y mandar campañas de mailings totalmente automatizadas. Es capaz de prover una API en las cuales se muestra información del traking de cada email enviado por este traker.",
     "authors": [
         {
             "name": "Jorge Alberto Ortega Ceja",
