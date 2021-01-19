@@ -3,7 +3,7 @@ namespace App;
 
 class EmailTrackerHandler
 {
-    public function hellow(){
+    public function hello(){
         return "hola";
     }
 
