@@ -1,6 +1,7 @@
 <?php
 namespace TrakerEmail\App\Providers;
 
+use App\EmailTrackerHandler;
 use Illuminate\Support\ServiceProvider;
 
 class EmailServiceProvider extends ServiceProvider
@@ -8,7 +9,9 @@ class EmailServiceProvider extends ServiceProvider
 
     public function register()
     {
-
+        \App::bind('TrakerEmail', function(){
+            return new EmailTrackerHandler;
+        });
     }
 
     /**
