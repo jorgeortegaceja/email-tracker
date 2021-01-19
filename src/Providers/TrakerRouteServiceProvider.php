@@ -1,6 +1,6 @@
 <?php
 
-namespace TrakerEmail\App\Providers;
+namespace EmailsTraker\App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;

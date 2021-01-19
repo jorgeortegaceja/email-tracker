@@ -1,5 +1,5 @@
 <?php
-namespace TrakerEmail;
+namespace EmailsTraker;
 
 class EmailTrackerHandler
 {
