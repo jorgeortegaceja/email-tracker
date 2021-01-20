@@ -1,6 +1,6 @@
 <?php
 
-namespace EmailTraker\Routes;
+namespace EmailTracker\Routes;
 
 
 use Illuminate\Contracts\Routing\Registrar as Router;
@@ -34,7 +34,7 @@ class RouteRegister
     public function all()
     {
         $this->forDashboard();
-        // $this->forEmailTraker();
+        // $this->forEmailTracker();
     }
 
     /**
@@ -44,11 +44,9 @@ class RouteRegister
      */
     public function forDashboard()
     {
-        $this->router->group(['middleware' => ['web']], function ($router) {
-
+        $this->router->group([], function ($router) {
+            $router->resource('schedulings', 'SchedulingController');
         });
     }
-
-
 
 }

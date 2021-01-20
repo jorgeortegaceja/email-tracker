@@ -1,12 +1,11 @@
 <?php
-namespace EmailTraker\Providers;
+namespace EmailTracker\Providers;
 
-use EmailTraker\EmailTrackerHandler;
+use EmailTracker\EmailTrackerHandler;
 use Illuminate\Support\ServiceProvider;
 
 class EmailTrackerServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
         $this->app->bind('EmailTracker', function($app){
@@ -15,9 +14,10 @@ class EmailTrackerServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__.'\..\config\traker_email.php' => config_path('email_traker.php'),
+                __DIR__.'\..\config\email_tracker.php' => config_path('email_tracker.php'),
             ]
         );
+
     }
 
     /**
@@ -27,6 +27,7 @@ class EmailTrackerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'email_tracker');
 
     }
 
