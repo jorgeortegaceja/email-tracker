@@ -2,10 +2,15 @@
 namespace EmailTracker\Providers;
 
 use EmailTracker\EmailTrackerHandler;
-use Illuminate\Support\ServiceProvider;
+// use Illuminate\Support\ServiceProvider;
 
-class EmailTrackerServiceProvider extends ServiceProvider
+class EmailTrackerServiceProvider
+//  extends ServiceProvider
 {
+
+    public function hola(){
+        dd('hellow');
+    }
 
     public function register()
     {
