@@ -9,7 +9,7 @@ class EmailServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->bind('EmailTraker', function($app){
+        $this->app->bind('EmailTraker', function($app){
             return new EmailTrackerHandler($app['view']);
         });
 

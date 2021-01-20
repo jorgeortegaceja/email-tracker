@@ -2,6 +2,7 @@
 namespace EmailTraker\Traits;
 
 use EmailTraker\Routes\RouteRegister;
+use Illuminate\Support\Facades\Route;
 
 trait RouterTrait
 {

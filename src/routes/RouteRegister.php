@@ -7,6 +7,7 @@ use Illuminate\Contracts\Routing\Registrar as Router;
 
 class RouteRegister
 {
+
     /**
      * The router implementation.
      *
@@ -33,7 +34,7 @@ class RouteRegister
     public function all()
     {
         $this->forDashboard();
-        $this->forEmailTraker();
+        // $this->forEmailTraker();
     }
 
     /**
