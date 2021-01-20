@@ -1,7 +1,7 @@
 <?php
-namespace EmailTraker\Providers;
+namespace EmailTracker\Providers;
 
-use EmailTraker\EmailTrackerHandler;
+use EmailTracker\EmailTrackerHandler;
 use Illuminate\Support\ServiceProvider;
 
 class EmailTrackerServiceProvider extends ServiceProvider

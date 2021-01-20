@@ -1,5 +1,5 @@
 <?php
-namespace EmailTraker\App\Models;
+namespace EmailTracker\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

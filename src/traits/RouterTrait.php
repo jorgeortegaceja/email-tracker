@@ -1,7 +1,7 @@
 <?php
-namespace EmailTraker\Traits;
+namespace EmailTracker\Traits;
 
-use EmailTraker\Routes\RouteRegister;
+use EmailTracker\Routes\RouteRegister;
 use Illuminate\Support\Facades\Route;
 
 trait RouterTrait
@@ -14,7 +14,7 @@ trait RouterTrait
 
         $defaultOptions = [
             'prefix' => 'email-traker',
-            'namespace' => 'EmailTraker\App\Http\Controllers',
+            'namespace' => 'EmailTracker\App\Http\Controllers',
         ];
 
         $options = array_merge($defaultOptions, $options);

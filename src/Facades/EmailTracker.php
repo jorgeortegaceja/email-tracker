@@ -1,5 +1,5 @@
 <?php
-namespace EmailTraker\Facades;
+namespace EmailTracker\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
