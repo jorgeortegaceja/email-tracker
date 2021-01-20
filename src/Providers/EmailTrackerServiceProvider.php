@@ -4,12 +4,12 @@ namespace EmailTraker\Providers;
 use EmailTraker\EmailTrackerHandler;
 use Illuminate\Support\ServiceProvider;
 
-class EmailServiceProvider extends ServiceProvider
+class EmailTrackerServiceProvider extends ServiceProvider
 {
 
     public function register()
     {
-        $this->app->bind('EmailTraker', function($app){
+        $this->app->bind('EmailTracker', function($app){
             return new EmailTrackerHandler($app['view']);
         });
 

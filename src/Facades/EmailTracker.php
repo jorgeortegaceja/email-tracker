@@ -3,10 +3,10 @@ namespace EmailTraker\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class EmailTraker extends Facade
+class EmailTracker extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'EmailTraker';
+        return 'EmailTracker';
     }
 }

@@ -17,11 +17,6 @@ class EmailTrackerHandler
        $this->view = $view;
     }
 
-    public function prueba(){
-        return "hola mundo";
-    }
-
-
     public function show_view($view){
         return $this->view->make($view);
     }
