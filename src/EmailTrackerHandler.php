@@ -1,10 +1,13 @@
 <?php
 namespace EmailsTraker;
 
+use EmailsTraker\Traits\RouterTrait;
 use Illuminate\View\Factory as View;
 
 class EmailTrackerHandler
 {
+    use RouterTrait;
+
     /**
      *  @var View
      */
@@ -17,4 +20,6 @@ class EmailTrackerHandler
     public function show_view($view){
         return $this->view->make($view);
     }
+
+
 }
