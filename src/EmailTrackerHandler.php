@@ -1,7 +1,7 @@
 <?php
-namespace EmailsTraker;
+namespace EmailTraker;
 
-use EmailsTraker\Traits\RouterTrait;
+use EmailTraker\Traits\RouterTrait;
 use Illuminate\View\Factory as View;
 
 class EmailTrackerHandler

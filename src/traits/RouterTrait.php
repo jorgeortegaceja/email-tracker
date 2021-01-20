@@ -1,5 +1,5 @@
 <?php
-namespace EmailsTraker\Traits;
+namespace EmailTraker\Traits;
 
 /**
  *
@@ -14,7 +14,7 @@ trait RouterTrait
 
         $defaultOptions = [
             'prefix' => 'email-traker',
-            'namespace' => 'EmailsTraker\App\Http\Controllers',
+            'namespace' => 'EmailTraker\App\Http\Controllers',
         ];
 
         $options = array_merge($defaultOptions, $options);
