@@ -5,7 +5,7 @@ namespace EmailTraker\Routes;
 
 use Illuminate\Contracts\Routing\Registrar as Router;
 
-class RouteRegistrar
+class RouteRegister
 {
     /**
      * The router implementation.

@@ -2,6 +2,21 @@
 
 return [
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default routing
+    |--------------------------------------------------------------------------
+    |
+    |  This option controls the group of routes created for the system dashboard
+    |  and also the routes for tracking emails
+    |
+    */
+     "routing" => [
+         'prefix' => '',
+         'middlewares' => ['web']
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Default database

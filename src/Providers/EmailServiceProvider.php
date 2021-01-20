@@ -9,9 +9,15 @@ class EmailServiceProvider extends ServiceProvider
 
     public function register()
     {
-        \App::bind('EmailTraker', function($app){
+        $this->bind('EmailTraker', function($app){
             return new EmailTrackerHandler($app['view']);
         });
+
+        $this->publishes(
+            [
+                __DIR__.'\..\config\traker_email.php' => config_path('email_traker.php'),
+            ]
+        );
     }
 
     /**

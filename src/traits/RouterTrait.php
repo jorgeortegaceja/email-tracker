@@ -1,9 +1,8 @@
 <?php
 namespace EmailTraker\Traits;
 
-/**
- *
- */
+use EmailTraker\Routes\RouteRegister;
+
 trait RouterTrait
 {
     public function routes($callback = null, array $options = [])
@@ -20,7 +19,7 @@ trait RouterTrait
         $options = array_merge($defaultOptions, $options);
 
         Route::group($options, function ($router) use ($callback) {
-            $callback(new RouteRegistrar($router));
+            $callback(new RouteRegister($router));
         });
     }
 }
