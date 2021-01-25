@@ -13,7 +13,7 @@ return [
     |
     */
      "routing" => [
-         'prefix' => '',
+         'prefix' => 'email-tracker',
          'middlewares' => ['web']
     ],
 

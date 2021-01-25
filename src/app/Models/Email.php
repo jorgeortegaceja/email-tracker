@@ -11,4 +11,14 @@ class Email extends Model
         $this->connection  =  config('email_tracker.connection');
     }
 
+    protected $fillable = [
+        'guid',
+        'email',
+        'name',
+        'lastname' 
+    ];
+
+    public function getRouteKeyName(){
+        return 'guid';
+    }
 }

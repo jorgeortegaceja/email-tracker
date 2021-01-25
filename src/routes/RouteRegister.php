@@ -34,7 +34,7 @@ class RouteRegister
     public function all()
     {
         $this->forDashboard();
-        // $this->forEmailTracker();
+        $this->forEmailTracker();
     }
 
     /**
@@ -44,9 +44,23 @@ class RouteRegister
      */
     public function forDashboard()
     {
-        $this->router->group([], function ($router) {
-            $router->resource('schedulings', 'SchedulingController');
+        $this->router->group([], function ($api) {
+            $api->resource('schedulings', 'SchedulingController');
         });
     }
+
+
+
+    /**
+     *  Register the routes for the email tracker 
+     * 
+     *  @return void
+     */ 
+
+     public function forEmailTracker(){
+         $this->router->group(['prefix'=>''], function($tracker){
+            $tracker->get('route-read/{email}', 'TrackerController@route_read');
+         });
+     }
 
 }
