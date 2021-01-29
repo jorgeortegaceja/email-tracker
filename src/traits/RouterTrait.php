@@ -13,7 +13,7 @@ trait RouterTrait
         };
 
         $defaultOptions = [
-            'prefix' => 'email-traker',
+            'prefix' => config('email_tracker.routing.prefix'),
             'namespace' => 'EmailTracker\App\Http\Controllers',
             'middlewares' => 'web'
         ];
