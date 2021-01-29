@@ -4,8 +4,7 @@ namespace EmailTracker\Providers;
 use EmailTracker\EmailTrackerHandler;
 use Illuminate\Support\ServiceProvider;
 
-class EmailTrackerServiceProvider
-//  extends ServiceProvider
+class EmailTrackerServiceProvider extends ServiceProvider
 {
     public function register()
     {

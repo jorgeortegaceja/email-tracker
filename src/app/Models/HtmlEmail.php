@@ -6,9 +6,4 @@ use Illuminate\Database\Eloquent\Model;
 class HtmlEmail extends Model
 {
 
-    public function __construct(){
-        parent::__construct();
-        $this->connection  =  config('email_tracker.connection');
-    }
-
 }

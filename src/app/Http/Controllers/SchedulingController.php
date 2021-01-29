@@ -1,8 +1,9 @@
 <?php
 namespace EmailTracker\App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use EmailTracker\App\Models\Scheduling;
 
 class SchedulingController extends Controller
 {
@@ -14,7 +15,7 @@ class SchedulingController extends Controller
     public function index()
     {
         // dd(config('email_tracker.connection'));
-        return view('email_tracker::scheduling');
+        return view('email_tracker::scheduling')->with('schedulings', Scheduling::all()->toJson());
     }
 
     /**

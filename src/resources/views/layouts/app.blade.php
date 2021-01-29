@@ -18,46 +18,33 @@
 </head>
 <body>
 
-    <div id="app">
-        <v-app>
-             <v-app-bar
-                absolute
-                color="blue darken-3"
-                dark
-                elevate-on-scroll
-                scroll-target="#scrolling-techniques-7"
-                class="mb-3"
-            >
-                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <div id="app" >
+        <v-app class="inspire">
+            <template>
+                <v-app-bar max-height="65px" color="blue darken-3" dark>
+                    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                    <v-toolbar-title>
+                        Email tracker
+                        @section('name')
+                        @show
+                    </v-toolbar-title>
+                </v-app-bar>
 
-                <v-toolbar-title>
-                    Email tracker
-                    @section('name')
-                    @show
-                </v-toolbar-title>
-
-                <v-spacer></v-spacer>
-            </v-app-bar>
-
-            @yield('app')
-            <v-main   id="scrolling-techniques-7">
-                <v-container class="mt-3">
-                    @section('table')
-                    @show
-                </v-container>
-            </v-main>
+                <v-main>
+                    <v-container class="mt-3">
+                        @section('table')
+                        @show
+                    </v-container>
+                </v-main>
+            </template>
         </v-app>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-        @section('script')
-        @show
-    <script>
-        var vue = new Vue({
-            el: '#app',
-            vuetify: new Vuetify(),
-        });
-    </script>
+    @section('script')
+    @show
+
 </body>
 </html>
