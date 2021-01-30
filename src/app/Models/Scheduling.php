@@ -12,6 +12,8 @@ class Scheduling extends Model
     }
 
     protected $fillable = [
+        'guid',
+        'status',
         'user_id',
         'html_email_id',
         'campaign_name',
@@ -22,7 +24,8 @@ class Scheduling extends Model
     ];
 
     protected $casts = [
-        // 'recurrent' => 'boolean',
+        'recurrent' => 'boolean',
+        'status' => 'boolean',
     ];
 
     public function getRouteKeyName(){
@@ -47,24 +50,6 @@ class Scheduling extends Model
     public function getUpdatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('d/m/Y H:i:s');
-    }
-
-    public function getRecurrentAttribute($value)
-    {
-        return $value ? 'si':'no';
-    }
-
-    public function getTimeIntervalAttribute($value)
-    {
-        switch ($value) {
-            case 'everyDay':
-                return 'cada día';
-                break;
-
-            default:
-                return '';
-                break;
-        }
     }
 
 }

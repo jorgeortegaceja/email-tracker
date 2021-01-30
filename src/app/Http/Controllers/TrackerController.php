@@ -17,21 +17,22 @@ class TrackerController
                         ->first();
 
         if( $tracker_content == null){
-
-            TrackerContent::create([
+            $tracker_content = TrackerContent::create([
                 'email_id' => $email->id,
                 'email_content_id' => $email_content->id,
                 'scheduling_id' => $scheduling->id,
-                'visualizations' => 1
+                'visualizations' => 1,
+                'visualizations_dates' => [now()->format('d-m-Y H:i:s')]
             ]);
-
-
         }else{
-            $tracker_content->fill(['visualizations'=> $tracker_content->visualizations++]);
-
+            $dates = $tracker_content->visualizations_dates;
+            array_push($dates, now()->format('d-m-Y H:i:s'));
+            $tracker_content->update([
+                'visualizations'=> (int)$tracker_content->visualizations+1,
+                'visualizations_dates' => $dates
+            ]);
         }
 
-        return response()->json([$tracker_content]);
-        // return redirect($email_content->resource);
+        return redirect($email_content->resource);
     }
 }

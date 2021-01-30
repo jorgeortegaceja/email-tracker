@@ -3,6 +3,7 @@ namespace EmailTracker\Providers;
 
 use EmailTracker\EmailTrackerHandler;
 use Illuminate\Support\ServiceProvider;
+use EmailTracker\App\Console\Commands\MailerCommand;
 
 class EmailTrackerServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,11 @@ class EmailTrackerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                MailerCommand::class
+            ]);
+        }
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'email_tracker');
 
     }
