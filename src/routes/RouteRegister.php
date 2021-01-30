@@ -52,14 +52,14 @@ class RouteRegister
 
 
     /**
-     *  Register the routes for the email tracker 
-     * 
+     *  Register the routes for the email tracker
+     *
      *  @return void
-     */ 
+     */
 
      public function forEmailTracker(){
          $this->router->group(['prefix'=>''], function($tracker){
-            $tracker->get('route-read/{email}', 'TrackerController@route_read');
+            $tracker->get('/read/scheduling/{scheduling}/email/{email}/content/{email_content}', 'TrackerController@route_read');
          });
      }
 

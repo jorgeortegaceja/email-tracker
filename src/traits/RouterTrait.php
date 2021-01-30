@@ -15,7 +15,7 @@ trait RouterTrait
         $defaultOptions = [
             'prefix' => config('email_tracker.routing.prefix'),
             'namespace' => 'EmailTracker\App\Http\Controllers',
-            'middlewares' => 'web'
+            'middleware' => ['web']
         ];
 
         $options = array_merge($defaultOptions, $options);

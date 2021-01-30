@@ -11,9 +11,23 @@ class Scheduling extends Model
         $this->connection  =  config('email_tracker.connection');
     }
 
-    protected $casts = [
-        'recurrent' => 'boolean',
+    protected $fillable = [
+        'user_id',
+        'html_email_id',
+        'campaign_name',
+        'recurrent',
+        'time_interval',
+        'start_shipping',
+        'finish_shipments'
     ];
+
+    protected $casts = [
+        // 'recurrent' => 'boolean',
+    ];
+
+    public function getRouteKeyName(){
+        return 'guid';
+    }
 
     public function getStartShippingAttribute($value)
     {
@@ -48,7 +62,7 @@ class Scheduling extends Model
                 break;
 
             default:
-                # code...
+                return '';
                 break;
         }
     }
