@@ -5,12 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Email extends Model
 {
-
-    public function __construct(){
-        parent::__construct();
-        $this->connection  =  config('email_tracker.connection');
-    }
-
     protected $fillable = [
         'guid',
         'email',
@@ -18,7 +12,15 @@ class Email extends Model
         'lastname'
     ];
 
-    public function getRouteKeyName(){
+    public function __construct(array $attributes = array(), array $casts = array())
+    {
+        parent::__construct($attributes, $casts);
+        $this->connection  =  config('email_tracker.connection');
+    }
+
+
+    public function getRouteKeyName()
+    {
         return 'guid';
     }
 }

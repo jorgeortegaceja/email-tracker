@@ -6,21 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Scheduling extends Model
 {
-    public function __construct(){
-        parent::__construct();
-        $this->connection  =  config('email_tracker.connection');
-    }
-
     protected $fillable = [
         'guid',
         'status',
+        'count_send',
         'user_id',
         'html_email_id',
         'campaign_name',
         'recurrent',
         'time_interval',
-        'start_shipping',
-        'finish_shipments'
+        'start_at',
+        'finish_at'
     ];
 
     protected $casts = [
@@ -28,28 +24,26 @@ class Scheduling extends Model
         'status' => 'boolean',
     ];
 
-    public function getRouteKeyName(){
+    public function __construct(array $attributes = array(), array $casts = array())
+    {
+        parent::__construct($attributes, $casts);
+        $this->connection  =  config('email_tracker.connection');
+    }
+
+    public function getRouteKeyName()
+    {
         return 'guid';
     }
 
-    public function getStartShippingAttribute($value)
+    public function email_list()
     {
-        return Carbon::parse($value)->format('d/m/Y H:i:s');
+        return $this->belongsToMany(EmailList::class);
     }
 
-    public function getFinishShipmentsAttribute($value)
-    {
-        return Carbon::parse($value)->format('d/m/Y H:i:s');
+    public function html_email(){
+        return $this->hasOne(HtmlEmail::class);
     }
 
-    public function getCreatedAtAttribute($value)
-    {
-        return Carbon::parse($value)->format('d/m/Y H:i:s');
-    }
 
-    public function getUpdatedAtAttribute($value)
-    {
-        return Carbon::parse($value)->format('d/m/Y H:i:s');
-    }
 
 }

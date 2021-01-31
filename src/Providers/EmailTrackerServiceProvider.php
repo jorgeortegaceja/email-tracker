@@ -34,6 +34,7 @@ class EmailTrackerServiceProvider extends ServiceProvider
             ]);
         }
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'email_tracker');
+        $this->loadViewsFrom(resource_path().'/mailings', 'mailings');
 
     }
 

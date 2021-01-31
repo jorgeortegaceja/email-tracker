@@ -2,7 +2,7 @@
 namespace EmailTracker\App\Console\Commands;
 use Illuminate\Console\Command;
 use EmailTracker\App\Models\Email;
-use EmailTracker\App\Strateguies\MailerStrategy;
+use EmailTracker\App\Strateguies\MailerCommandStrategy;
 
 class MailerCommand extends Command
 {
@@ -11,7 +11,7 @@ class MailerCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'mail:sender';
+    protected $signature = 'mail:sender {id}';
 
     /**
      * The console command description.
@@ -25,17 +25,17 @@ class MailerCommand extends Command
      *
      * @var Object
      */
-    protected $mailerStrategy;
+    protected $mailerCommandStrategy;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(MailerStrategy $mailerStrategy)
+    public function __construct(MailerCommandStrategy $mailerCommandStrategy)
     {
         parent::__construct();
-        $this->mailerStrategy = $mailerStrategy;
+        $this->mailerCommandStrategy = $mailerCommandStrategy;
     }
 
     /**
@@ -45,9 +45,8 @@ class MailerCommand extends Command
      */
     public function handle()
     {
-        $this->mailerStrategy->setInstance($this);
-
-        $this->mailerStrategy->start();
+        $this->mailerCommandStrategy->setInstance($this);
+        $this->mailerCommandStrategy->start($this->argument('id'));
 
         // $this->info('The command was successful!');
         // $this->line('Display this on the screen');
